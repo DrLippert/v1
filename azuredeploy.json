@@ -581,82 +581,82 @@
         }
       }
     },
-    //{
-    //  "name": "[concat('VM-deploy-CL', copyIndex())]",
-    //  "type": "Microsoft.Resources/deployments",
-    //  "apiVersion": "2015-01-01",
-    //  "dependsOn": [
-    //    "[concat('Microsoft.Resources/deployments/', 'Shared-Resources')]",
-    //    "[resourceId('Microsoft.Resources/deployments', 'VM-ext-ADDSCS')]"
-    //  ],
-    //  "copy": {
-    //    "name": "vmLoop",
-    //    "count": "[sub(length(variables('VMclients').VMName),0)]"
-    //  },
-    //  "properties": {
-    //    "mode": "Incremental",
-    //    "templateLink": {
-    //      "uri": "[variables('VM_deployTemplateUri')]",
-    //      "contentVersion": "1.0.0.0"
-    //    },
-    //    "parameters": {
-    //      "StorageAccountName": {
-    //        "value": "[variables('StorageAccountName')]"
-    //      },
-    //      "AvailabilitySetName": {
-    //        "value": "[variables('AvailabilitySetName')[0]]"
-    //      },
-    //      "LoadBalancerName": {
-    //        "value": "[variables('LoadBalancerName')]"
-    //      },
-    //      "LBFEConfig": {
-    //        "value": "[variables('LBFrontEndName')]"
-    //      },
-    //      "LBBEPoolName": {
-    //        "value": "[variables('LBBackEndName')]"
-    //      },
-    //      "VMName": {
-    //        "value": "[variables('VMclients').VMName[copyIndex()]]"
-    //      },
-    //      "VMSize": {
-    //        "value": "[variables('VMclients').VMSize[copyIndex()]]"
-    //      },
-    //      "VMFENATport": {
-    //        "value": "[variables('VMclients').FENATPort[copyIndex()]]"
-    //      },
-    //      "VMIPtype": {
-    //        "value": "[variables('VMclients').VMIPtype[copyIndex()]]"
-    //      },
-    //      "VMIPaddr": {
-    //        "value": "[variables('VMclients').VMIPaddr[copyIndex()]]"
-    //      },
-    //      "VMimagePublisher": {
-    //        "value": "[variables('VMclients').publisher[copyIndex()]]"
-    //      },
-    //      "VMimageOffer": {
-    //        "value": "[variables('VMclients').offer[copyIndex()]]"
-    //      },
-    //      "VMimageSKU": {
-    //        "value": "[variables('VMclients').sku[copyIndex()]]"
-    //      },
-    //      "VnetName": {
-    //        "value": "[variables('VnetName')]"
-    //      },
-    //      "VMVnetSubnetName": {
-    //        "value": "[variables('VMclients').VMSubnet[copyIndex()]]"
-    //      },
-    //      "AdminUserName": {
-    //        "value": "[parameters('adminUsername')]"
-    //      },
-    //      "AdminPassword": {
-    //        "value": "[parameters('adminPassword')]"
-    //      },
-    //      "_artifactsLocation": {
-    //        "value": "[variables('_artifactsLocation')]"
-    //      }
-    //    }
-    //  }
-    //},
+    {
+      "name": "[concat('VM-deploy-CL', copyIndex())]",
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2015-01-01",
+      "dependsOn": [
+        "[concat('Microsoft.Resources/deployments/', 'Shared-Resources')]",
+        "[resourceId('Microsoft.Resources/deployments', 'VM-ext-ADDSCS')]"
+      ],
+      "copy": {
+        "name": "vmLoop",
+        "count": "[sub(length(variables('VMclients').VMName),0)]"
+      },
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[variables('VM_deployTemplateUri')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "StorageAccountName": {
+            "value": "[variables('StorageAccountName')]"
+          },
+          "AvailabilitySetName": {
+            "value": "[variables('AvailabilitySetName')[0]]"
+          },
+          "LoadBalancerName": {
+            "value": "[variables('LoadBalancerName')]"
+          },
+          "LBFEConfig": {
+            "value": "[variables('LBFrontEndName')]"
+          },
+          "LBBEPoolName": {
+            "value": "[variables('LBBackEndName')]"
+          },
+          "VMName": {
+            "value": "[variables('VMclients').VMName[copyIndex()]]"
+          },
+           "VMSize": {
+            "value": "[variables('VMclients').VMSize[copyIndex()]]"
+          },
+          "VMFENATport": {
+            "value": "[variables('VMclients').FENATPort[copyIndex()]]"
+          },
+          "VMIPtype": {
+            "value": "[variables('VMclients').VMIPtype[copyIndex()]]"
+          },
+          "VMIPaddr": {
+            "value": "[variables('VMclients').VMIPaddr[copyIndex()]]"
+          },
+          "VMimagePublisher": {
+            "value": "[variables('VMclients').publisher[copyIndex()]]"
+          },
+          "VMimageOffer": {
+            "value": "[variables('VMclients').offer[copyIndex()]]"
+          },
+          "VMimageSKU": {
+            "value": "[variables('VMclients').sku[copyIndex()]]"
+          },
+          "VnetName": {
+            "value": "[variables('VnetName')]"
+          },
+          "VMVnetSubnetName": {
+            "value": "[variables('VMclients').VMSubnet[copyIndex()]]"
+          },
+          "AdminUserName": {
+            "value": "[parameters('adminUsername')]"
+          },
+          "AdminPassword": {
+            "value": "[parameters('adminPassword')]"
+          },
+          "_artifactsLocation": {
+            "value": "[variables('_artifactsLocation')]"
+          }
+        }
+      }
+    },
     //{
     //  "name": "[concat('VM-ext-Domainjoin-CL1')]",
     //  "type": "Microsoft.Resources/deployments",
